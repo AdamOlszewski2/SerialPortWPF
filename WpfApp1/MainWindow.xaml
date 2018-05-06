@@ -5,64 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Zarządzanie portami" Height="350" Width="525" Closed="Window_Closed">
-    <Grid>
-        <TabControl HorizontalAlignment="Left" Height="299" Margin="10,10,10,10" VerticalAlignment="Top" Width="497">
+        Title="Zarządzanie portami" Height="189" Width="368" Closed="Window_Closed" ResizeMode="CanMinimize">
+    <!-- Zakładka 1 - Porty -->
+    <Grid Background="#FFE5E5E5" Height="189" Width="350">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
 
-            <!-- Zakładka 1 - Porty -->
-            <TabItem Header="Porty">
-                <Grid Background="#FFE5E5E5" Height="280" Width="480">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-                    <!-- Kolumna 1  -->
-                    <Label Content="Numer portu" Grid.Column="0" Grid.Row="0"/>
-                    <Label Content="Bity na sekundę" Grid.Column="0" Grid.Row="1"/>
-                    <Button Name="openPort" Content="Otwórz port" Grid.Column="0" Grid.Row="2" Margin="5,5,5,5" MaxWidth="100" Click="openPort_Click"/>
-                    <!-- Kolumna 2 -->
-                    <ComboBox Grid.Column="1" Grid.Row="0" Name="nrPortu" Margin="5,5,5,5"/>
-                    <ComboBox Grid.Column="1" Grid.Row="1"  Margin="5,5,5,5" Name="baudRate">
-                        <ComboBoxItem IsSelected="True">9600</ComboBoxItem>
-                        <ComboBoxItem>14400</ComboBoxItem>
-                        <ComboBoxItem>19200</ComboBoxItem>
-                        <ComboBoxItem>38400</ComboBoxItem>
-                        <ComboBoxItem>57600</ComboBoxItem>
-                        <ComboBoxItem>115200</ComboBoxItem>
-                        <ComboBoxItem>128000</ComboBoxItem>
-                    </ComboBox>
-                    <Button Content="Odśwież" Grid.Column="1" Grid.Row="2" Margin="5,5,5,5" MaxWidth="100"
+                <!-- Kolumna 1  -->
+                <Label Content="Numer portu" Grid.Column="0" Grid.Row="0"/>
+                <Label Content="Bity na sekundę" Grid.Column="0" Grid.Row="1"/>
+                <Button Name="openPort" Content="Otwórz port" Grid.Column="0" Grid.Row="2" Margin="5,5,5,5" MaxWidth="100" Click="openPort_Click"/>
+                <Button Content="Wyślij dane" Grid.Column="0" Grid.Row="3" Margin="5,5,5,5" MaxWidth="100"
+                            Name="btn_Send" Click="btn_Send_Click"/>
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="" VerticalAlignment="Center"
+                   HorizontalAlignment="Left" Name="txt_Port"/>
+        <!-- Kolumna 2 -->
+                <ComboBox Grid.Column="1" Grid.Row="0" Name="nrPortu" Margin="5,5,5,5"/>
+                <ComboBox Grid.Column="1" Grid.Row="1"  Margin="5,5,5,5" Name="baudRate">
+                    <ComboBoxItem IsSelected="True">9600</ComboBoxItem>
+                    <ComboBoxItem>14400</ComboBoxItem>
+                    <ComboBoxItem>19200</ComboBoxItem>
+                    <ComboBoxItem>38400</ComboBoxItem>
+                    <ComboBoxItem>57600</ComboBoxItem>
+                    <ComboBoxItem>115200</ComboBoxItem>
+                    <ComboBoxItem>128000</ComboBoxItem>
+                </ComboBox>
+                 <Button Content="Zamknij port" Grid.Column="1" Grid.Row="2" Margin="5,5,5,5" MaxWidth="100"
+                            Name="btn_Close" Click="btn_Close_Click"/>
+                  <Button Content="Odśwież" Grid.Column="1" Grid.Row="3" Margin="5,5,5,5" MaxWidth="100"
                             Name="btn_refresh" Click="btn_refresh_Click"/>
-                </Grid>
-            </TabItem>
-            <!-- Zakładka 2 - Dane do wysłania-->
-            <TabItem Header="Dane">
-                <Grid Background="#FFE5E5E5" Height="280" Width="480">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                </Grid>
-            </TabItem>
-        </TabControl>
+                <!--Kolumna 3-->
+
+
     </Grid>
 </Window>
